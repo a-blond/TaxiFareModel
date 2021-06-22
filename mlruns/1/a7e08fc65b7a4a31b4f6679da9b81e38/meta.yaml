@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/Aurelien/code/a-blond/TaxiFareModel/mlruns/1/a7e08fc65b7a4a31b4f6679da9b81e38/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: a7e08fc65b7a4a31b4f6679da9b81e38
+run_uuid: a7e08fc65b7a4a31b4f6679da9b81e38
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1624368742456
+status: 1
+tags: []
+user_id: unknown

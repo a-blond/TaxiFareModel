@@ -1,4 +1,5 @@
 # imports
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import Pipeline
@@ -8,6 +9,8 @@ from TaxiFareModel.data import get_data, clean_data, hold_out
 from TaxiFareModel.encoders import DistanceTransformer, TimeFeaturesEncoder
 from TaxiFareModel.utils import compute_rmse
 import pandas as pd
+
+import joblib
 
 from memoized_property import memoized_property
 import mlflow
@@ -89,6 +92,10 @@ class Trainer():
         self.mlflow_log_metric("RMSE", rmse)
 
         return rmse
+    
+    def save_model(self):
+        """ Save the trained model into a model.joblib file """
+        return joblib.dump(self.pipeline, "trained_TaxiFareModel.joblib")
 
 
 if __name__ == "__main__":
@@ -111,5 +118,8 @@ if __name__ == "__main__":
     
     # evaluate
     score = trainer.evaluate(X_test, y_test)
-    
     print(f"RMSE: {score}")
+    
+    # Save model
+    trainer.save_model()
+    
